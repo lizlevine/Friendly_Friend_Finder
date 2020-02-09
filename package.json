@@ -2,9 +2,11 @@
   "name": "friendly_friend_finder",
   "version": "1.0.0",
   "description": "A compatibility-based user friendly application using Node and Express servers",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+    
   },
   "repository": {
     "type": "git",

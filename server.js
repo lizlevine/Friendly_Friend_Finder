@@ -3,7 +3,6 @@
 // Series of npm packages that we will use to give our server useful functionality
 // ==============================================================================
 
-
 var express = require("express");
 
 // ==============================================================================
@@ -12,29 +11,38 @@ var express = require("express");
 // ==============================================================================
 
 var app = express();
-var bodyParser= require("body-parser");
+// var bodyParser = require("body-parser");
 var path = require("path");
-
 
 // ** GODFREY** can you use this before you have this linked to Heroku?
 
 var PORT = process.env.PORT || 8080;
 
+// Sets up the Express app to handle data parsing - this was used in restaurant app And Star Wars
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // see extended ... npm packages
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse various different custom JSON tpes as JSON
-app.use(bodyParser.json({ type: 'application/*+json' }))
+// app.use(bodyParser.json({ type: "application/*+json" }));
 // parse some custom thing into a Buffer
 
-app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
+// app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 
 // parse an html body into a string
-app.use(bodyParser.text({ type: 'text/html' }))
+// app.use(bodyParser.text({ type: "text/html" }));
 
-require("./app/routing/api-routes.js")(app);
-require("./app/routing/html-routes.js")(app);
+// require("./app/routing/api-routes.js")(app);
+// require("./app/routing/html-routes.js")(app);
 
+// below is how the requires are written for restaurant app
+// require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
+
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // ================================================================================
 // ROUTER
@@ -44,7 +52,6 @@ require("./app/routing/html-routes.js")(app);
 
 // require("./app/routing/html-routes.js")(app);
 
-
 // require("./routes/htmlRoutes")(app);
 
 // =============================================================================
@@ -53,5 +60,5 @@ require("./app/routing/html-routes.js")(app);
 // =============================================================================
 
 app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
-  });
+  console.log("App listening on PORT: " + PORT);
+});

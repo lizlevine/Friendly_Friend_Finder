@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -173,39 +174,33 @@
       </div>
       <footer class="footer">
         <p><a href="
-          https://git.heroku.com/friendliest-friend-finder.git">API Friendly Friend Finder</a> | <a href="https://github.com/lizlevine"> GitHub Repo</a></p>
-        <div class="container"></div>
+          https://git.heroku.com/friendliest-friend-finder.git">API Friendly Friend Finder</a> | </p>
+          <p><a href="https://github.com/lizlevine"> GitHub Repo</a></p> 
       </footer>
     </div>
 
-    <!-- modal goes here  -->
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="resultsModal" role="dialog">
+  <div class="modal-dialog">
+
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><strong>Your BFF Match!</strong></h2>
       </div>
       <div class="modal-body">
-        ...
+        <h2 id="MatchName"></h2>
+        <img id="matchImg" src="" alt="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
   </div>
 </div>
-    <script>
+    <script type="text/javascript">
 
       // capture the form inputs
       $("#submit").on("click", function() {
@@ -245,9 +240,28 @@
               $("#qst9").val(),
               $("#qst10").val()
             ]
-          }
-        }
-      })
+          };
+     
+      // capture website URL
+      var currentUrL = window.location.origin;
+
+      // AJAX POST the data to the friends API
+      $.post(currentURL + "/api/friends", userData, function(data) {
+      
+      $("#matchName").text(data.name);
+      $("#matchImg").attr("src", data.photo);
+      
+        $("#resultsModal").modal("toggle");
+       
+
+      });
+     } 
+     else {
+         alert("Please fill out all fields before submitting.");
+       }
+
+       return false;
+      });
     
     </script>
   </body>
