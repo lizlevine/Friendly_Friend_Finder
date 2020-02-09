@@ -20,7 +20,7 @@ var path = require("path");
 
 var PORT = process.env.PORT || 8080;
 
-// create application /x-www-form-urlencoded parser
+// see extended ... npm packages
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse various different custom JSON tpes as JSON
