@@ -12,27 +12,28 @@ var express = require("express");
 // ==============================================================================
 
 var app = express();
-var bodyParser= require("body-parser")
+var bodyParser= require("body-parser");
+var path = require("path");
 
 
 // ** GODFREY** can you use this before you have this linked to Heroku?
 
 var PORT = process.env.PORT || 8080;
 
-// Sets up the Express app to handle data parsing
-var jsonParser = bodyParser.json()
-
 // create application /x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false})
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse various different custom JSON tpes as JSON
-app.use(bodyParser.json({ type: "application/*+json" }))
+app.use(bodyParser.json({ type: 'application/*+json' }))
 // parse some custom thing into a Buffer
 
-app.use(bodyParser.raw({ type: "application/vnd.custom-type" }))
+app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 
 // parse an html body into a string
-app.use(bodyParser.text({ type: "text/html"}))
+app.use(bodyParser.text({ type: 'text/html' }))
+
+require("./app/routing/api-routes.js")(app);
+require("./app/routing/html-routes.js")(app);
 
 
 // ================================================================================
@@ -41,7 +42,9 @@ app.use(bodyParser.text({ type: "text/html"}))
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./app/routing/html-routes.js")(app);
+// require("./app/routing/html-routes.js")(app);
+
+
 // require("./routes/htmlRoutes")(app);
 
 // =============================================================================
