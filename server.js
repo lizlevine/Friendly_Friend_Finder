@@ -25,8 +25,9 @@ var PORT = process.env.PORT || 8080;
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
 
-// added this per jordan's demo
+// added this to use style.css file in public directory
 // app.use(express.static("app/public"));
+app.use(express.static(__dirname + "/app/public"));
 
 // installed body-parser npm package
 app.use(bodyParser.urlencoded({ extended: true }));
