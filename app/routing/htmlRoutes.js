@@ -9,14 +9,16 @@ module.exports = function(app) {
   // Below code handles when users "visit" a page.
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
+// from 14-20 lisa video
 
-  // app.get("/survey", function(req, res) {
-  //   res.sendFile(path.join(__dirname + "/../public/survey.html"));
-  // });
+//   app.get("/survey", function(req, res) {
+//     res.sendFile(path.join(__dirname + "/../public/survey.html"));
+//   });
 
-  // app.use(function(req, res) {
-  //   res.sendFile(path.join(__dirname + "/../public/home.html"));
-  // });
+//   app.use(function(req, res) {
+//     res.sendFile(path.join(__dirname + "/../public/home.html"));
+//   });
+// }
 
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
@@ -26,4 +28,4 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
-};
+}

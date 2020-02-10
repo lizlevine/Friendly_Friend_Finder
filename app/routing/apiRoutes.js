@@ -11,18 +11,20 @@ module.exports = function(app) {
     var bestMatch = {
       name: "",
       photo: "",
-      friendDifference: 801
+      friendDifference: 1200
     };
 
     // results of user's survey and parse
     var userData = req.body;
     var userScores = userData.scores;
 
+    console.log(userScores);
+
     //    this var calculates the diff btwn user's scores and each friend in database
 
     var totalDifference = 0;
 
-    // Use nested for loop & loop through each of the possible friend matches in db
+    // Use nested for loop / loops through each of the possible friend matches in db
 
     for (var i = 0; i < friends.length; i++) {
       console.log(friends[i].name);
@@ -43,8 +45,9 @@ module.exports = function(app) {
         }
       }
     }
+
     friends.push(userData);
 
     res.json(bestMatch);
   });
-};
+}

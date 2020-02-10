@@ -174,7 +174,7 @@
       </div>
       <footer class="footer">
         <p><a href="
-          https://git.heroku.com/friendliest-friend-finder.git">API Friendly Friend Finder</a> | </p>
+          https://friendliest-friend-finder.herokuapp.com">API Friendly Friend Finder</a> | </p>
           <p><a href="https://github.com/lizlevine"> GitHub Repo</a></p> 
       </footer>
     </div>
@@ -194,7 +194,7 @@
         <img id="matchImg" src="" alt="">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        
       </div>
     </div>
@@ -203,6 +203,7 @@
     <script type="text/javascript">
 
       // capture the form inputs
+
       $("#submit").on("click", function() {
         function validateForm() {
           var isValid = true;
@@ -241,6 +242,8 @@
               $("#qst10").val()
             ]
           };
+
+          validateForm()
      
       // capture website URL
       var currentUrL = window.location.origin;
@@ -250,8 +253,7 @@
       
       $("#matchName").text(data.name);
       $("#matchImg").attr("src", data.photo);
-      
-        $("#resultsModal").modal("toggle");
+      $("#resultsModal").modal("toggle");
        
 
       });
@@ -262,6 +264,8 @@
 
        return false;
       });
+
+      
     
     </script>
   </body>

@@ -4,45 +4,42 @@
 // ==============================================================================
 
 var express = require("express");
+var app = express();
+var bodyParser = require("body-parser");
+var path = require("path");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
 // This sets up the basic properties for our express server
 // ==============================================================================
 
-var app = express();
-// var bodyParser = require("body-parser");
-var path = require("path");
-
-// ** GODFREY** can you use this before you have this linked to Heroku?
-
 var PORT = process.env.PORT || 8080;
 
-// Sets up the Express app to handle data parsing - this was used in restaurant app And Star Wars
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// create application/json parser
 
-// see extended ... npm packages
-// app.use(bodyParser.urlencoded({ extended: true }));
+// var jsonParser = bodyParser.json()
+
+// var urlencodedParser = bodyParser.urlencoded({ extended: true })
+
+// Sets up the Express app to handle data parsing - this was used in restaurant app And Star Wars
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+
+// added this per jordan's demo
+// app.use(express.static("app/public"));
+
+// installed body-parser npm package
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse various different custom JSON tpes as JSON
-// app.use(bodyParser.json({ type: "application/*+json" }));
+app.use(bodyParser.json({ type: 'application/*+json' }));
 // parse some custom thing into a Buffer
 
-// app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
+app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }));
 
 // parse an html body into a string
-// app.use(bodyParser.text({ type: "text/html" }));
+app.use(bodyParser.text({ type: 'text/html' }));
 
-// require("./app/routing/api-routes.js")(app);
-// require("./app/routing/html-routes.js")(app);
-
-// below is how the requires are written for restaurant app
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
-
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
 
 // ================================================================================
 // ROUTER
@@ -50,9 +47,16 @@ require("./app/routing/htmlRoutes")(app);
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-// require("./app/routing/html-routes.js")(app);
 
+// below is how the requires are written for restaurant app
+// require("./routes/apiRoutes")(app);
 // require("./routes/htmlRoutes")(app);
+
+
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
+
+
 
 // =============================================================================
 // LISTENER
