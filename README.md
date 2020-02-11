@@ -24,16 +24,16 @@ This full-stack site will take in results from the users' input based on an 11 q
 
 ### When the user hits submit:
 
-A modal will pop-up displaying both the name and picutre of the closest match.
+A modal will pop-up displaying both the name and picture of the closest match. See Demo Below:
+
+##### User arrives at home page and clicks through to survey
 
 ![](app/public/images/part1.gif)
 
-##### User arrives at home page and clicks through to survey
+##### Closest match to user input pops up in modal
 
 ![](app/public/images/midge.gif)
 
 ##### Closest match to user input pops up in modal
 
 ![](app/public/images/elliot-robot.png)
-
-##### Closest match to user input pops up in modal
