@@ -1,14 +1,14 @@
 # Friendliest Friend Finder
+
 A compatibility-based Full Stack web application using Node and Express servers
 
 This full-stack site will take in results from the users' input based on an 11 question survey. The answers range on a scale of 1 to 5. The program compares their answers with those from other users and displays the name and picture of the friend with the best overall match.
-
 
 ## Building F3: Required tools & tech:
 
 ### NPM Packages installed and required by the server.js file:
 
-- Express 
+- Express
 - Path
 - Body-Parser
 
@@ -24,15 +24,16 @@ This full-stack site will take in results from the users' input based on an 11 q
 
 ### When the user hits submit:
 
-A modal will pop-up displaying both the name and picutre of the closest match. 
-
+A modal will pop-up displaying both the name and picutre of the closest match.
 
 ![](images/F3-part1.gif)
+
 ##### User arrives at home page and clicks through to survey
 
-![](images/bridg-bird-pt2.gif)
+![](images/part2-submit.gif)
+
 ##### Closest match pops up in modal
 
-![](images/F3-part2-submit.gif)
-##### Closest match pops up in modal
+![](images/brig-bird.png)
 
+##### Closest match pops up in modal
