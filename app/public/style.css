@@ -1,3 +1,48 @@
+body {
+  background-image: url("./images/pixel-heart.png");
+}
+
+.container {
+  background-color: lightskyblue;
+  border: 2px solid lightslategrey;
+}
+
 #matchImg {
   width: 100%;
+}
+
+#footer {
+  margin-top: 80px;
+  text-align: center;
+  padding-bottom: 20px;
+  color: slategrey;
+}
+
+/* #footerSurvey {
+  text-align: center;
+  padding-bottom: 20px;
+  color: slategrey;
+} */
+
+.jumbotron {
+  text-align: center;
+  background-color: lightskyblue;
+  color: cornsilk;
+  margin-top: 100px;
+}
+
+#deploy-button {
+  background-color: lightcoral;
+  color: cornsilk;
+  border: 2px solid lightslategrey;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+#submit {
+  margin-top: 40px;
+  background-color: lightcoral;
+  color: cornsilk;
+  border: 2px solid lightslategrey;
+  cursor: pointer;
 }
