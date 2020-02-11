@@ -30,10 +30,10 @@ A modal will pop-up displaying both the name and picutre of the closest match.
 
 ##### User arrives at home page and clicks through to survey
 
-![](app/public/images/part2-submit.gif)
+![](app/public/images/bridg-bird-pt2.gif)
 
 ##### Closest match pops up in modal
 
-![](app/public/images/brig-bird.png)
+![](app/public/images/F3-part2-submit.gif)
 
 ##### Closest match pops up in modal
