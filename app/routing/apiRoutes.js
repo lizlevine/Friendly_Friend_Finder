@@ -32,8 +32,7 @@ module.exports = function(app) {
 
       // then loop through all SCORES of each friend in db
       for (var j = 0; j < friends[i].scores[j]; j++) {
-
-        // calculates the diff in absolute numbers btwn the scores of friends and users 
+        // calculates the diff in absolute numbers btwn the scores of friends and users
         totalDifference += Math.abs(
           parseInt(userScores[j]) - parseInt(friends[i].scores[j])
         );
@@ -50,4 +49,4 @@ module.exports = function(app) {
 
     res.json(bestMatch);
   });
-}
+};
