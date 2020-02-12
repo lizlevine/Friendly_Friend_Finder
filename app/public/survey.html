@@ -251,7 +251,9 @@
         }
 
         // if all required field are filled / function call can be within an if statement
-        if (validateForm()) {
+        // if (validateForm()) {
+
+        if (valid === true) {
           // create an object for the user's data
           var userData = {
             name: $("#name").val(),
