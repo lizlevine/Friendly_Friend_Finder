@@ -16,6 +16,11 @@ body {
   margin-top: 80px;
   text-align: center;
   padding-bottom: 20px;
+  color: cornsilk;
+}
+
+#footer:hover {
+  transform: scale(1.09);
   color: slategrey;
 }
 
@@ -40,10 +45,20 @@ body {
   margin-top: 50px;
 }
 
+#deploy-button:hover {
+  transform: scale(1.25);
+  background-color: orangered;
+}
+
 #submit {
   margin-top: 40px;
   background-color: lightcoral;
   color: cornsilk;
   border: 2px solid lightslategrey;
   cursor: pointer;
+}
+
+#submit:hover {
+  transform: scale(1.0175);
+  background-color: orangered;
 }
