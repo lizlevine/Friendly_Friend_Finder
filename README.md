@@ -1,8 +1,8 @@
 # Friendliest Friend Finder
 
-A compatibility-based Full Stack web application using Node and Express servers
+A compatibility-based Full Stack web application using Node and Express servers.a
 
-This full-stack site will take in results from the users' input based on an 11 question survey. The answers range on a scale of 1 to 5. The program compares their answers with those from other users and displays the name and picture of the friend with the best overall match.
+This full-stack site will match the user with their new best friend. The user is prompted to answer an 11 question survey rating their answer on a scale of 1-5. The program compares the users' answers with the friends and  renders the name and image of the friend who's most compatible.
 
 ## Building F3: Required tools & tech:
 
