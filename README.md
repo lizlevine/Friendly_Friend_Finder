@@ -1,6 +1,8 @@
 # Friendliest Friend Finder
 
-A compatibility-based Full Stack web application using Node and Express servers.a
+https://friendliest-friend-finder.herokuapp.com
+
+A compatibility-based Full Stack web application using Node and Express servers
 
 This full-stack site will match the user with their new best friend. The user is prompted to answer an 11 question survey rating their answer on a scale of 1-5. The program compares the users' answers with the friends and  renders the name and image of the friend who's most compatible.
 
