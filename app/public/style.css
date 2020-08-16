@@ -12,16 +12,14 @@ body {
   width: 100%;
 }
 
-#footer {
-  margin-top: 80px;
-  text-align: center;
-  padding-bottom: 20px;
-  color: cornsilk;
+footer a {
+  color: lightcoral;
+  margin-top: 200px;
 }
 
-#footer:hover {
-  transform: scale(1.09);
-  color: slategrey;
+a:hover {
+  /* transform: scale(1.09); */
+  color: orangered;
 }
 
 /* #footerSurvey {

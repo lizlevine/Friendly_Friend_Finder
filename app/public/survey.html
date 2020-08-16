@@ -208,6 +208,9 @@
         >
         | <a href="https://github.com/lizlevine"> GitHub Repo</a>
       </p>
+      <div class="copyright">
+        &copy; copyright 2020 elizabeth levine
+      </div>
     </footer>
 
     <!-- Modal -->
@@ -232,17 +235,17 @@
     <script type="text/javascript">
       // capture the form inputs
 
-      $("#submit").on("click", function(event) {
+      $("#submit").on("click", function (event) {
         event.preventDefault();
 
         function validateForm() {
           var isValid = true;
-          $(".form-control").each(function() {
+          $(".form-control").each(function () {
             if ($(this).val() === "") {
               isValid = false;
             }
           });
-          $(".chosen-select").each(function() {
+          $(".chosen-select").each(function () {
             if ($(this).val() === "") {
               isValid = false;
             }
@@ -269,8 +272,8 @@
               $("#qst8").val(),
               $("#qst9").val(),
               $("#qst10").val(),
-              $("#qst11").val()
-            ]
+              $("#qst11").val(),
+            ],
           };
 
           // validateForm()
@@ -279,7 +282,7 @@
           var currentURL = window.location.origin;
 
           // AJAX POST the data to the friends API
-          $.post(currentURL + "/api/friends", userData, function(data) {
+          $.post(currentURL + "/api/friends", userData, function (data) {
             $("#matchName").text(data.name);
             $("#matchImg").attr("src", data.photo);
             $("#resultsModal").modal("toggle");
