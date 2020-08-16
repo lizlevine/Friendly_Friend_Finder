@@ -27,12 +27,13 @@ a:hover {
   text-align: center;
   color: lightcoral;
   font-size: 13px;
+  margin-bottom: 17px;
 }
 
 #footer {
   text-align: center;
-  padding-bottom: 20px;
   color: lightcoral;
+  margin-top: 20px;
 }
 
 .jumbotron {
