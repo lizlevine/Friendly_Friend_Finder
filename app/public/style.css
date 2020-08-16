@@ -12,27 +12,35 @@ body {
   width: 100%;
 }
 
-footer a {
+a {
   color: lightcoral;
   margin-top: 200px;
+  text-align: center;
 }
 
 a:hover {
   /* transform: scale(1.09); */
   color: orangered;
+  text-align: center;
+}
+.copyright {
+  text-align: center;
+  color: lightcoral;
+  font-size: 13px;
 }
 
-/* #footerSurvey {
+#footer {
   text-align: center;
   padding-bottom: 20px;
-  color: slategrey;
-} */
+  color: lightcoral;
+}
 
 .jumbotron {
   text-align: center;
   background-color: lightskyblue;
   color: cornsilk;
   margin-top: 100px;
+  margin-bottom: 80px;
 }
 
 #deploy-button {
@@ -41,6 +49,7 @@ a:hover {
   border: 2px solid lightslategrey;
   cursor: pointer;
   margin-top: 50px;
+  margin-bottom: 150px;
 }
 
 #deploy-button:hover {
